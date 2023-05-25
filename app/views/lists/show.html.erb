@@ -1,11 +1,26 @@
+
 <div class="container p-4">
+
+  <div class="d-flex align-items-center justify-content-space-between">
   <h1><%= @list.name %></h1>
+  <%=link_to new_list_bookmark_path(@list) do %>
+    <p><i class="fa-regular fa-plus"></i>Add a new bookmark</p>
+  <% end %>
+  </div>
+
   <% @list.bookmarks.each do |bookmark| %>
-    <div class="card my-3">
-      <p><strong>Bookmark Comment : </strong><%= bookmark.comment %></p>
-      <p><strong>Movie Title : </strong><%= bookmark.movie.title %></p>
-      <p><strong>Movie Overview : </strong><%= bookmark.movie.overview %></p>
-      <p><strong>Movie Rating : </strong><%= bookmark.movie.rating %></p>
+    <div class="card-category my-3 p-3">
+      <div>
+        <ul>
+          <li><strong>Bookmark Comment : </strong><%= bookmark.comment %></li>
+          <li><strong>Movie Title : </strong><%= bookmark.movie.title %></li>
+          <li><strong>Movie Overview : </strong><%= bookmark.movie.overview %></li>
+          <li><strong>Movie Rating : </strong><%= bookmark.movie.rating %></li>
+        </ul>
+      </div>
+      <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete} do %>
+        <i class="fas fa-times p-2 fa-lg"></i>
+      <% end %>
     </div>
   <% end %>
 </div>

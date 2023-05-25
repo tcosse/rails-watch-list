@@ -8,7 +8,7 @@ class ListsController < ApplicationController
   def create
     @new_list_item = List.new(list_params)
     if @new_list_item.save
-      redirect_to list_index_path
+      redirect_to lists_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -19,9 +19,8 @@ class ListsController < ApplicationController
   end
 
   def show
-
   end
-
+  
   private
 
   def set_list
