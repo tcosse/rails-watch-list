@@ -1,0 +1,11 @@
+<div class="container p-4">
+  <h1><%= @list.name %></h1>
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="card my-3">
+      <p><strong>Bookmark Comment : </strong><%= bookmark.comment %></p>
+      <p><strong>Movie Title : </strong><%= bookmark.movie.title %></p>
+      <p><strong>Movie Overview : </strong><%= bookmark.movie.overview %></p>
+      <p><strong>Movie Rating : </strong><%= bookmark.movie.rating %></p>
+    </div>
+  <% end %>
+</div>
