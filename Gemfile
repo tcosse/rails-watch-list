@@ -11,6 +11,8 @@ gem "sassc-rails"
 
 gem "dotenv-rails"
 
+gem "cloudinary"
+
 gem "faker"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
